@@ -57,7 +57,6 @@ export function useQuizEditor(opts: UseQuizEditorOptions = {}) {
           id: uid("q_"),
           content:
             "Type your question here. Example: 2x^2 or a/b. Inline: E=mc^2. Display: $$\\frac{a^2+b^2}{c^2}$$",
-          type: "mcq",
           options: [
             { id: uid("o_"), text: "Option A" },
             { id: uid("o_"), text: "Option B" },
@@ -122,8 +121,8 @@ export function useQuizEditor(opts: UseQuizEditorOptions = {}) {
   const addQuestion = useCallback(() => {
     const q: Question = {
       id: uid("q_"),
-      content: "New question",
       type: "mcq",
+      content: "New question",
       options: [
         { id: uid("o_"), text: "Option 1" },
         { id: uid("o_"), text: "Option 2" },

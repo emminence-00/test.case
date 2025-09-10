@@ -39,10 +39,11 @@ export default function Page() {
     const newQuestion: Question = {
       id: uuid(),
       content: "",
+      type:"mcq",
       options: Array(4)
         .fill(null)
         .map(() => ({ id: uuid(), text: "" } as Option)),
-      correctIndex: undefined,
+      correct: undefined,
     };
     setTest((prev) => ({ ...prev, questions: [...prev.questions, newQuestion] }));
   };

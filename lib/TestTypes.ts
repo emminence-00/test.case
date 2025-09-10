@@ -6,11 +6,14 @@ export type Option = {
 
 export type Question = {
     id: string;
+    type:"mcq"|"short_answer"|"true_false"|"fill_in_the_blank";
     content: string;
     options: Option[];
-    correctIndex: number | undefined;
-    image?: string;
+    correctIndex?: number; // for mcq and true_false
+    correct: number | undefined|string|null;
+    imageUrl?: string;
     marks?: number;
+    imgMaxWidth?:number; 
     difficulty?: "easy" | "medium" | "hard";
     explanation?: string;
 };
